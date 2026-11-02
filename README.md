@@ -40,12 +40,17 @@ server.py
 import socket
 
 s = socket.socket()
+
 s.bind(('localhost', 8000))
+
 s.listen(1)
+
 print("Server ready...")
 
 c, _ = s.accept()
+
 while True:
+
     msg = c.recv(1024).decode()
     if not msg:
         break
